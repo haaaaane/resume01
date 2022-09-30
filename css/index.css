@@ -1,0 +1,346 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'SuseongDotum';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/SuseongDotum.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body { overflow-x: hidden;}
+h1 { position:fixed; top:36px; left:46px; z-index:99 }
+h1 img { width:160px }
+
+#menu {
+    position: fixed;
+    top:50%; 
+    transform: translateY(-50%);
+    left:36px;
+    z-index: 99999;
+}
+#menu li {
+    width:20px;
+    margin: 5px 0;
+}
+#menu li a {
+    display:block;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000;
+    position:relative;
+    margin-bottom: 18px;
+}
+#menu li.on a { background-color:#FCBC66 }
+#menu li.on .a { background-color:#E2474B }
+#menu li.on .b { background-color:#406D96 }
+#menu li span {
+    position: absolute;
+    top:0; left:20px;
+    margin-left:15px;
+}
+.title { 
+    font-size: 85px;
+    font-family: 'SuseongDotum';
+    display: inline;
+}
+/* .title.on .title1 { display: none; }
+.title.on .title2 { transform:translateX(-1200px); } */
+.title1 {
+    position: absolute;
+    top:180px; right:350px;
+    animation: bounceInLeft;
+    animation-duration: 2s;
+    letter-spacing: 0.1em;
+}
+.title .title2 {
+    animation: headShake;
+    animation-delay: 1.2s;
+    animation-duration: 2s;
+    position: absolute;
+    top:170px; right:140px;
+}
+.title .title2 span { margin-right:14px;}
+.title .title2 .lblack { width:55px; }
+.title .title2 .iblack { width:22px; }
+.title .title2 .oblack { width:75px; }
+.title .title3 { margin-right:12px; }
+
+/* 전체페이지 */
+section { 
+    width:100vw; height:100vh; 
+    font-family: 'NEXON Lv2 Gothic';
+    /* background-size:cover; 
+    background-position:right center; 
+    position:relative; 
+    background-attachment: fixed;
+    overflow:hidden;  */
+}   
+#wrap section article { width:100%; height:100%; }
+section article > h2 {     
+    font-size: 95px; 
+    font-family: 'SuseongDotum'; 
+    margin: 170px 0px 0px 290px;
+    display: inline-block;
+    animation-name:titlemove;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+}
+@keyframes titlemove {
+    from { transform: translateX(-20px); opacity: 0;
+}
+to{ transform:translateX(0px);; opacity: 1;}
+}
+
+/* section1 */
+/* #sect1 { background-image:url() } */
+
+
+/* section2 */
+.article2 { position: relative }
+.article2 h2 span { color:#406D96 }
+.article2 .memobox {
+    width:1000px; 
+    height:600px; 
+    background: rgba(0,0,0,0.4);
+    position: absolute;
+    top:25%; right:5%;
+    padding: 20px 0;
+    display: flex;
+}
+.article2 > div { flex:1; }
+.article2 .left { margin:40px; display: flex; flex-flow:column}
+.article2 .right { display: flex; margin-top:40px;
+    flex-flow:column }
+.article2 .left .me { flex:1.8; }
+.article2 .left .edu { flex:1; }
+.article2 .left .history { flex:1; }
+.article2 .right .skill { flex:2;}
+.article2 .right .act { flex:1 }
+/* .article2 .skill h2 { margin-bottom: 10px;} */
+.article2 .graphBox {
+    width:78%;
+    height:100%;
+
+}
+.article2 .graphBox .score {
+    border: 1px solid #000;
+    border-radius: 15px;
+    width:80%;
+    height:30px;
+    margin-top: 10px;
+
+    transform: translateX(35%);
+}
+.article2 .graphBox .score p {
+    /* position: absolute;
+    left:0px; */
+    color:#fff;
+    position: absolute;
+    top:0px; right:295px;
+    font-size: 15px;
+} 
+.article2 .graphBox .score .myscore {
+    width:10%;
+    color:#fff;
+    height: 100%;
+    border-radius: 15px;
+    text-align: right;
+    font-size: 14px;
+}
+.article2 .graphBox .score .photo {
+    background: #2daaff;
+} 
+.article2 .graphBox .score .illur {
+    background: #ff9b00;
+} 
+.article2 .graphBox .score .html {
+    background: #b30b00;
+} 
+.article2 .graphBox .score .css {
+    background: #0057c9;
+} 
+.article2 .graphBox .score .js {
+    background: #385902;
+} 
+.article2 .graphBox .score .jq {
+    background: #a33196;
+} 
+
+/* section3-4 artlayout */
+.artlayout { 
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+.artlayout .slide-group { 
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center; 
+    position: relative;
+}
+.artlayout .slideouter .slick-arrow {
+    border:none;
+    font-size:30px;
+    position: absolute;
+    top:110%; left:50px;
+}
+.artlayout .slideouter  .arrright {
+    z-index: 99;
+    left:110px;
+    border:1px solid #555;
+    width:50px;
+    height:50px;
+    border-radius: 30px;
+
+}
+.artlayout .slide-group .arrleft {
+    z-index: 99;
+    border:1px solid #555;
+    width:50px;
+    height:50px;
+    border-radius: 30px;
+}
+.artlayout .slide { 
+    height:580px;
+    background-repeat: no-repeat; 
+    background-size:cover;
+    background-position:right;
+    margin-right:40px;
+    border-radius: 15px;
+    flex: 1;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    position: relative;
+}
+.artlayout .slide a {
+    opacity: 0;
+}
+.artlayout .slide:hover a {
+    opacity: 1;
+}
+.artlayout .slide_text span {
+    position: absolute;
+    bottom:-10%; left:54%;
+    font-size: 140px;
+    color: #fff;
+    font-weight: bold;
+}
+.article3 .textouter {
+    width:800px;
+    padding:0 80px 0 240px;
+
+}
+.article3 .slideouter {
+    width:1000px;
+}
+/* section3 */
+#sect3 { position: relative; }
+#sect3 > h2 { 
+    font-size: 95px; 
+    font-family: 'SuseongDotum'; 
+    position: absolute;
+    top:16%; left:14%;
+} 
+#sect3 h2 span { color:#FCBC66 }
+.article3 .slide1 { background-image: url(../img/photo1.jpg); }
+.article3 .slide2 { background-image: url(../img/photo2.jpg); }
+.article3 .slide3 { background-image: url(../img/photo3.jpg); }
+.article3 .slide4 { background-image: url(../img/photo2.jpg); }
+
+
+/* section4 */
+#sect4 { position: relative; }
+#sect4 h2 { 
+    font-size: 95px; 
+    font-family: 'SuseongDotum'; 
+    position: absolute;
+    top:16%; left:14%;
+} 
+#sect4 h2 span { color:#FCBC66 }
+.article4 .slide1 { background-image: url(../img/photo4.jpg); }
+.article4 .slide2 { background-image: url(../img/photo5.jpg); }
+.article4 .slide3 { background-image: url(../img/photo6.jpg); }
+.article4 .textouter {
+    width:800px;
+    padding:0 80px 0 240px;
+}
+.article4 .slideouter {
+    width:1000px;
+}
+
+/* section5 */
+.article5 { 
+    /* display:flex;
+    justify-content: center;
+    align-items: center; */
+    height:100%;
+    position: relative;
+}
+.article5 h2 span { color:#406D96 }
+.article5 form {
+    width:500px;
+    background: #fff;
+    padding:50px;
+    font-size: 12px;
+    margin:0 auto;
+}
+.article5 col:nth-child(1) { width:20% }
+.article5 col:nth-child(2) { width:auto }
+.article5 input {
+    width:100%; 
+    height:30px; 
+    padding:3px;
+    border:1px solid #555; 
+}
+.article5 textarea {
+    width:100%; 
+    height:100px;
+    border:1px solid #555;
+}
+.article5 td { padding:5px 0 }
+.article5 .btn { text-align: center; }
+.article5 .btn button {
+    border:none;
+    padding:5px 15px;
+    background: #ddd;
+    border-radius: 5px;
+}
+.article5 .btn input {    border:none;
+    padding:5px 15px;
+    background: #ddd;
+    border-radius: 5px;
+    width:auto;
+}
+.article5 .thankyou_message { text-align: center; margin-top: 10px;}
+.article5 .progress {
+    position:absolute;
+    bottom:250px;
+    width:100%; 
+    height:20px; 
+    transition: 0.3s;
+    white-space: nowrap;
+}
+.article5 .progress-load {
+    animation: textLoop 10s linear infinite;
+    white-space: nowrap;
+}
+@keyframes textLoop {
+    0% {-webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0);
+}
+    100% {
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+.article5 .progress .end {
+    margin-right: 28px;
+}
+
+
+
